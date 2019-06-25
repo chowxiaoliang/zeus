@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns="http://www.drools.org/xsd/kmodule">
+
+    <kbase name="ColockKB" packages="com.zl.clock">
+        <ksession name="ColockKS"/>
+    </kbase>
+
+    <kbase name="HelloworldKB" packages="com.zl.helloworld">
+        <ksession name="HelloworldKS"/>
+    </kbase>
+
+    <kbase name="BankingKB" packages="com.zl.banking">
+        <ksession name="BankingKS"/>
+    </kbase>
+
+    <kbase name="PersonKB" packages="com.zl.person">
+        <ksession name="PersonKS"/>
+    </kbase>
+
+</kmodule>

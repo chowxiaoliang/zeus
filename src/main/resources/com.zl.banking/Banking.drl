@@ -1,0 +1,36 @@
+package com.zl.banking
+
+rule "Rule 01"
+    lock-on-active true
+    salience 1
+    when
+        eval(true)
+    then
+        System.out.println("rule 01 works!");
+        System.out.println("rule 01 executed!...");
+end
+
+rule "Rule 02"
+    lock-on-active true
+     salience 2
+    when
+        Number($intValue : intValue())
+
+    then
+        System.out.println("Number found with value: " + $intValue);
+        System.out.println("rule 02 executed!...");
+end
+
+rule "Rule 03"
+    lock-on-active true
+    salience 3
+    when
+        $number : Number()
+        not Number( intValue() < $number.intValue())
+    then
+        System.out.println("Number found with value: " + $number.intValue());
+        System.out.println("rule 03 executed!...");
+end
+
+
+

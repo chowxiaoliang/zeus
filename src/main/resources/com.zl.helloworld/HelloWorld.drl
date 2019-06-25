@@ -1,0 +1,20 @@
+package com.zl.helloworld
+
+import com.zl.clock.Clock;
+import com.zl.helloworld.Message
+import com.alibaba.fastjson.JSONObject;
+
+rule "hello world"
+    lock-on-active true
+    dialect "mvel"
+    when
+        m : Message(status == Message.HELLO, content : substance)
+    then
+        System.out.println(content);
+        System.out.println(JSONObject.toJSONString(m));
+        modify(m){
+            substance = "goodbye cruel world!",
+            status = Message.GOOD_BYE};
+     end
+
+

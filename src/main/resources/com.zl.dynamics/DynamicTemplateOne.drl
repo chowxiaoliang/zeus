@@ -1,0 +1,34 @@
+
+template header
+
+condition
+ruleId
+eventType
+content
+setMethod
+
+package com.zl.dynamics;
+import com.zl.dynamic.People;
+import com.alibaba.fastjson.JSONObject;
+template "Dynamic_template_one"
+rule "@{ruleId}"
+    lock-on-active true
+
+    when
+         m : @{eventType}(@{condition})
+
+//            eval(true)
+    then
+            System.out.println("rule 01 works! content is=>" );
+            System.out.println("zhouliang works!");
+
+            System.out.println("this is result =>"+ m.getName());
+            System.out.println("this is result =>"+ JSONObject.toJSONString(m));
+            m.@{setMethod}(String.valueOf(@{content}));
+            update(m);
+            System.out.println("this is result =>"+ JSONObject.toJSONString(m));
+
+end
+end template
+
+

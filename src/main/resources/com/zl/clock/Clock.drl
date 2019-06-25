@@ -1,0 +1,37 @@
+package com.zl.clock
+import com.zl.clock.Clock
+import com.zl.helloworld.Message;
+rule "run"
+lock-on-active true
+	salience 1
+	when
+		c: Clock(!(hour == 1 && second == 1))
+	then
+		System.out.println(c);
+		System.out.println("rule is executing!");
+		Thread.sleep(1000);
+		c.setSecond(100);
+		update(c);
+end
+
+rule "second"
+lock-on-active true
+	salience 2
+	when
+		c: Clock(second == 60);
+	then
+		c.setMinute(c.getMinute() + 1);
+		c.setSecond(0);
+		update(c);
+end
+
+rule "minute"
+lock-on-active true
+	salience 3
+	when
+		c: Clock(minute == 60)
+	then
+		c.setHour(c.getHour() + 1);
+		c.setMinute(0);
+		update(c);
+end
