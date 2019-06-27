@@ -39,8 +39,8 @@ public class PersonTest {
         System.out.println("count is => " + count);
         kieSession.dispose();
 
-        System.out.println("person info is : " + JSONObject.toJSONString(sameOne));
-        System.out.println("person info is : " + JSONObject.toJSONString(sameOne1));
+        System.out.println("com.com.zl.drl.person.drl info is : " + JSONObject.toJSONString(sameOne));
+        System.out.println("com.com.zl.drl.person.drl info is : " + JSONObject.toJSONString(sameOne1));
 
     }
 }

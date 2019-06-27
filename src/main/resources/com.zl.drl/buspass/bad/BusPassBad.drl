@@ -1,0 +1,48 @@
+package com.zl.drl.buspass.bad;
+
+import com.zl.BusPass.Person
+import com.zl.BusPass.ChildBusPass
+import com.zl.BusPass.AdultBusPass
+dialect  "mvel"
+
+rule "IssueChildBusPass"
+    lock-on-active true
+    salience 4
+    when
+        $p : Person(age < 16)
+    then
+        insertLogical(new ChildBusPass($p));
+end
+
+rule "IssueAdultBusPass"
+    salience 3
+    when
+        $p : Person(age >= 16)
+    then
+        insertLogical(new AdultBusPass($p));
+end
+
+rule "PrintChildBusPass"
+    salience 0
+     when
+        ChildBusPass()
+     then
+        System.out.println("Child Bus Pass!");
+end
+
+rule "PrintNoChildBusPass"
+    salience 1
+     when
+        ChildBusPass()
+     then
+        System.out.println("No Child Bus Pass");
+end
+
+rule "PrintAdultBusPass"
+    salience 2
+     when
+        AdultBusPass()
+     then
+        System.out.println("Adult Bus Pass!");
+end
+

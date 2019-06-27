@@ -1,0 +1,28 @@
+package com.zl.drl.basic;
+
+import com.zl.basic.NoLoop
+import java.util.concurrent.TimeUnit
+dialect  "mvel"
+
+rule "NoLoopO"
+salience 2
+    when
+        $n : NoLoop(num > 0)
+    then
+        System.out.println("current num is" + $n.getNum());
+        $n.setNum($n.getNum() + 1);
+        TimeUnit.SECONDS.sleep(1);
+        if($n.getName().equalsIgnoreCase("score")){
+            System.out.println("current name is=" + $n.getName());
+        }
+//        System.out.println();
+        modify($n){System.out.println("current num is" + $n.getNum())}
+end
+
+rule "NoLoopT"
+
+    when
+        $n : NoLoop(name == "score")
+    then
+        System.out.println("current score is =>" + $n.getNum());
+end

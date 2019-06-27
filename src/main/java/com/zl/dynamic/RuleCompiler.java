@@ -1,8 +1,5 @@
 package com.zl.dynamic;
 
-import org.drools.compiler.cdi.KieCDIExtension;
-import org.drools.compiler.kproject.ReleaseIdImpl;
-import org.drools.core.phreak.RuleExecutor;
 import org.drools.template.ObjectDataCompiler;
 import org.kie.api.KieBase;
 import org.kie.api.KieServices;
@@ -11,7 +8,6 @@ import org.kie.api.io.Resource;
 import org.kie.api.io.ResourceType;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
-import org.omg.CORBA.PERSIST_STORE;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -58,7 +54,7 @@ public class RuleCompiler {
 
     public String applyRuleTemplate(Map<String, Object> prepareData){
         ObjectDataCompiler objectDataCompiler = new ObjectDataCompiler();
-        return objectDataCompiler.compile(Arrays.asList(prepareData), Thread.currentThread().getContextClassLoader().getResourceAsStream("com.zl.dynamics/DynamicTemplateOne.drl"));
+        return objectDataCompiler.compile(Arrays.asList(prepareData), Thread.currentThread().getContextClassLoader().getResourceAsStream("com.zl.dynamics.drl/DynamicTemplateOne.drl"));
     }
 
     public Map<String, Object> prepareData(List<RuleDto> ruleDtoList){
