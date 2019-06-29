@@ -1,0 +1,21 @@
+package com.zl.drl.basic;
+
+import com.zl.basic.LockOnActive
+dialect  "mvel"
+
+rule "LockOnActiveOne"
+    lock-on-active true
+    when
+        $L : LockOnActive(age > 10)
+    then
+        System.out.println("rule one executed!");
+        modify($L){setAge($L.getAge() + 100)}
+end
+
+rule "LockOnActiveTwo"
+    lock-on-active true
+    when
+        $L : LockOnActive(age > 15)
+    then
+        System.out.println("rule two executed!");
+end
