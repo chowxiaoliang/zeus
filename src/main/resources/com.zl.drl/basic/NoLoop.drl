@@ -20,7 +20,7 @@ salience 2
         modify($n){setNum($n.getNum() + 1)}
 end
 
-rule "NoLoopT"
+rule "NoLoopM"
 
     when
         $n : NoLoop(name == "score")

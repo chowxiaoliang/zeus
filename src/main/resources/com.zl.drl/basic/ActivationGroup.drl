@@ -11,7 +11,7 @@ rule "ActivationGroupO"
         System.out.println("current groupId is greater than 0 int test group!");
 end
 
-rule "ActivationGroupT"
+rule "ActivationGroupM"
     activation-group "test"
     when
         $A : ActivationGroup(groupId > 5)

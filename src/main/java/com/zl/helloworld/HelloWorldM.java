@@ -9,7 +9,7 @@ import org.kie.api.runtime.KieSession;
 
 import java.util.ArrayList;
 
-public class HelloWorldT {
+public class HelloWorldM {
 
     public static void main(String[] args) {
         KieServices kieServices = KieServices.Factory.get();

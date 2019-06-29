@@ -4,7 +4,7 @@ import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
-public class ActivationGroupT {
+public class ActivationGroupM {
 
     public static void main(String[] args) {
         KieServices kieServices = KieServices.Factory.get();

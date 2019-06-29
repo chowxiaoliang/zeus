@@ -8,7 +8,7 @@ import org.kie.api.runtime.KieSession;
 /**
  * 规则以传入参数的组合模式的方式执行
  */
-public class PersonTest {
+public class PersonM {
 
     public static void main(String[] args) {
         KieServices kieServices = KieServices.Factory.get();

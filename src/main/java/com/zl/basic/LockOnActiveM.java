@@ -4,16 +4,15 @@ import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
-public class AgendaGroupT {
+public class LockOnActiveM {
 
     public static void main(String[] args) {
         KieServices kieServices = KieServices.Factory.get();
         KieContainer kieContainer = kieServices.getKieClasspathContainer();
         KieSession kieSession = kieContainer.newKieSession("BasicKS");
 
-        AgendaGroup agendaGroup = new AgendaGroup(50, "AgendaTest", "content");
-        kieSession.insert(agendaGroup);
-        kieSession.getAgenda().getAgendaGroup("official").setFocus();
+        LockOnActive lockOnActive = new LockOnActive("zhouliang", 13);
+        kieSession.insert(lockOnActive);
         kieSession.fireAllRules();
     }
 }

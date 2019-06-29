@@ -5,7 +5,7 @@ import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
-public class ClockTest {
+public class ClockM {
 
     public static void main(String[] args) {
         KieServices ks = KieServices.Factory.get();

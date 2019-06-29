@@ -5,7 +5,7 @@ import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.rule.FactHandle;
 
-public class BadBusPassT {
+public class BadBusPassM {
 
     public static void main(String[] args) {
         KieServices kieServices = KieServices.Factory.get();
