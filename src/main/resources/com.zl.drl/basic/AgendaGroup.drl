@@ -5,6 +5,7 @@ dialect  "mvel"
 
 rule "AgendaGroupO"
     agenda-group "test"
+    auto-focus true
     when
         $A : AgendaGroup(groupId > 0)
     then

@@ -11,7 +11,7 @@ public class AgendaGroupT {
         KieContainer kieContainer = kieServices.getKieClasspathContainer();
         KieSession kieSession = kieContainer.newKieSession("BasicKS");
 
-        AgendaGroup agendaGroup = new AgendaGroup(5, "AgendaTest", "content");
+        AgendaGroup agendaGroup = new AgendaGroup(50, "AgendaTest", "content");
         kieSession.insert(agendaGroup);
         kieSession.getAgenda().getAgendaGroup("official").setFocus();
         kieSession.fireAllRules();
