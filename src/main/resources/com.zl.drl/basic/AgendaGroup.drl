@@ -1,0 +1,36 @@
+package com.zl.drl.basic;
+
+import com.zl.basic.AgendaGroup;
+dialect  "mvel"
+
+rule "AgendaGroupO"
+    agenda-group "test"
+    when
+        $A : AgendaGroup(groupId > 0)
+    then
+        System.out.println("current groupId is greater than 0 in test group!");
+end
+
+rule "AgendaGropuT"
+    agenda-group "test"
+    when
+        $A : AgendaGroup(groupId > 10)
+    then
+        System.out.println("current groupId is greater than 10 in test group!");
+end
+
+rule "AgendaGroupTh"
+    agenda-group "official"
+    when
+        $A : AgendaGroup(groupId > 0)
+    then
+        System.out.println("current groupId is greater than 0 in official group!");
+end
+
+rule "AgendaGroupF"
+    agenda-group "official"
+    when
+        $A : AgendaGroup(groupId > 10)
+    then
+        System.out.println("current groupId is greater than 10 in official group!");
+end

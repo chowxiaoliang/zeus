@@ -17,8 +17,8 @@
         <ksession name="PersonKS"/>
     </kbase>
 
-    <kbase name="NoLoopKB" packages="com.zl.drl.basic">
-        <ksession name="NoLoopKS"/>
+    <kbase name="BasicBS" packages="com.zl.drl.basic">
+        <ksession name="BasicKS"/>
     </kbase>
 
     <kbase name="BadBusPassKB" packages="com.zl.drl.buspass.bad">
