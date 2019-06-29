@@ -4,16 +4,17 @@ import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
-public class AgendaGroupM {
+public class GlobalM {
 
     public static void main(String[] args) {
         KieServices kieServices = KieServices.Factory.get();
         KieContainer kieContainer = kieServices.getKieClasspathContainer();
         KieSession kieSession = kieContainer.newKieSession("BasicKS");
 
-        AgendaGroup agendaGroup = new AgendaGroup(50, "AgendaTest", "content");
-        kieSession.insert(agendaGroup);
-        kieSession.getAgenda().getAgendaGroup("official").setFocus();
+        Message message = new MyMessage();
+        Global global = new Global(100, "global", "global content");
+        kieSession.insert(global);
+        kieSession.setGlobal("message", message);
         kieSession.fireAllRules();
         kieSession.dispose();
     }

@@ -16,5 +16,6 @@ public class ActivationGroupM {
         String name = kieSession.getAgenda().getActivationGroup("test").getName();
         System.out.println("name is =" + name);
         kieSession.fireAllRules();
+        kieSession.dispose();
     }
 }

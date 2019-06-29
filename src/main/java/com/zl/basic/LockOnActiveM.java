@@ -14,5 +14,6 @@ public class LockOnActiveM {
         LockOnActive lockOnActive = new LockOnActive("zhouliang", 13);
         kieSession.insert(lockOnActive);
         kieSession.fireAllRules();
+        kieSession.dispose();
     }
 }

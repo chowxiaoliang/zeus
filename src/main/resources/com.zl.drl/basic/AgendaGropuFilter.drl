@@ -1,0 +1,28 @@
+package com.zl.drl.basic;
+
+import com.zl.basic.AgendaFilterD
+dialect  "mvel"
+
+rule "AgendaGropuFilterO"
+    agenda-group "goal-agenda-group"
+    when
+        $A : AgendaFilterD(groupId > 10)
+    then
+        System.out.println("current groupId is greater than 10 in goal agenda group!");
+end
+
+rule "AgendaGroupFilterT"
+    agenda-group "goal-agenda-group"
+    when
+        $A : AgendaFilterD(groupId > 50)
+    then
+         System.out.println("current groupId is greater than 50 in goal agenda group!");
+end
+
+rule "AgendaGroupFilterTh"
+    when
+        $A : AgendaFilterD(groupId >10)
+
+    then
+        System.out.println("current groupId is greater than 10 in other gropu!");
+end

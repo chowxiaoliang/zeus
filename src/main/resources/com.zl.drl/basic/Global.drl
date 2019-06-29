@@ -1,0 +1,13 @@
+package com.zl.drl.basic;
+
+import com.zl.basic.Global
+dialect  "mvel"
+
+global com.zl.basic.Message message;
+
+rule "Global"
+    when
+        $G : Global(globalId > 10)
+    then
+        message.printMessage($G.getContent());
+end
