@@ -54,7 +54,7 @@ public class RuleCompiler {
 
     public String applyRuleTemplate(Map<String, Object> prepareData){
         ObjectDataCompiler objectDataCompiler = new ObjectDataCompiler();
-        return objectDataCompiler.compile(Arrays.asList(prepareData), Thread.currentThread().getContextClassLoader().getResourceAsStream("com.zl.dynamics.drl/DynamicTemplateOne.drl"));
+        return objectDataCompiler.compile(Arrays.asList(prepareData), Thread.currentThread().getContextClassLoader().getResourceAsStream("com.zl.drl/dynamics/DynamicTemplateOne.drl"));
     }
 
     public Map<String, Object> prepareData(List<RuleDto> ruleDtoList){
