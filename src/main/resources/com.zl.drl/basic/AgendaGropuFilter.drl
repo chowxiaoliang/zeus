@@ -3,8 +3,9 @@ package com.zl.drl.basic;
 import com.zl.basic.AgendaFilterD
 dialect  "mvel"
 
-rule "AgendaGropuFilterO"
+rule "AgendaGroupFilterO"
     agenda-group "goal-agenda-group"
+    auto-focus true
     when
         $A : AgendaFilterD(groupId > 10)
     then
@@ -19,7 +20,7 @@ rule "AgendaGroupFilterT"
          System.out.println("current groupId is greater than 50 in goal agenda group!");
 end
 
-rule "AgendaGroupFilterTh"
+rule "AgendaGroupFilter0"
     when
         $A : AgendaFilterD(groupId >10)
 
