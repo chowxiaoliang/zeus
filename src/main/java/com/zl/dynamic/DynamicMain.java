@@ -7,11 +7,7 @@ import java.util.Map;
 public class DynamicMain {
 
     public static void main(String[] args) {
-        String url = DynamicMain.class.getClassLoader().getResource("").getPath();
-        System.out.println("current class path is =>" + url);
 
-        String urlT = Thread.currentThread().getContextClassLoader().getResource("").getPath();
-        System.out.println("current class path is =>" + urlT);
         RuleCompiler ruleLoad = new RuleCompiler();
         List<RuleDto> ruleDtoList = ruleLoad.getActivityRulesList();
 

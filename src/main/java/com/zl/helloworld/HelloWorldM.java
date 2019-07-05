@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class HelloWorldM {
 
     public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
         KieServices kieServices = KieServices.Factory.get();
         KieContainer kieContainer = kieServices.getKieClasspathContainer();
         KieSession kieSession = kieContainer.newKieSession("HelloworldKS");
@@ -24,5 +25,7 @@ public class HelloWorldM {
         kieSession.fireAllRules();
         kieSession.dispose();
         System.out.println("after executed message is => " + JSONObject.toJSONString(message));
+        long endTime = System.currentTimeMillis();
+        System.out.println("total time is=" + (endTime - startTime) +"ms");
     }
 }

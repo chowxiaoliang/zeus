@@ -1,0 +1,11 @@
+package com.zl.drl.database;
+
+import com.zl.database.Boy
+dialect  "mvel"
+
+rule "RuleStr"
+    when
+        $B : Boy(age > 18, name == "zhouliang")
+    then
+        System.out.println($B.getSex());
+end
