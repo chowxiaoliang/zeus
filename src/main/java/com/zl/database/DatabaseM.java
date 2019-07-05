@@ -29,16 +29,31 @@ public class DatabaseM {
         resource.setTargetPath(UUID.randomUUID().toString());
         kieFileSystem.write(resource);
 
+
+        /**
+         * 耗时比较久的地方 start 1500ms左右
+         */
         KieBuilder kieBuilder = kieServices.newKieBuilder(kieFileSystem).buildAll();
         KieModule kieModule = kieBuilder.getKieModule();
         if (kieBuilder.getResults().hasMessages(Message.Level.ERROR)) {
             logger.error("create rule in kieFileSystem Error{}", kieBuilder.getResults());
             System.out.println(kieBuilder.getResults());
         }
+        /**
+         * 耗时比较久的地方 end 1500ms左右
+         */
+
+
+        /**
+         * 耗时100ms左右 start
+         */
         ReleaseId releaseId = kieModule.getReleaseId();
         KieContainer kieContainer = kieServices.newKieContainer(releaseId);
         KieBase kieBase = kieContainer.getKieBase();
         KieSession kieSession = kieBase.newKieSession();
+        /**
+         * 耗时100ms左右 end
+         */
 
         Boy boy = new Boy("zhouliang", "male", 20);
         FactHandle factHandle = kieSession.insert(boy);
@@ -47,6 +62,6 @@ public class DatabaseM {
         System.out.println("executed rules=" + n);
         kieSession.dispose();
         long endTime = System.currentTimeMillis();
-        System.out.println("total time is " + (endTime-startTime) + "ms");
+        System.out.println("end time is " + (endTime-startTime) + "ms");
     }
 }
