@@ -39,6 +39,8 @@ public class PersonM {
         System.out.println("count is => " + count);
         // 在内存使用一次，insert完了之后需要delete，否则可能会导致内存不足。
         kieSession.delete(kieSession.getFactHandle(student));
+        // 或者是
+        kieSession.retract(kieSession.getFactHandle(student));
         kieSession.dispose();
 
         System.out.println("com.com.zl.drl.person.drl info is : " + JSONObject.toJSONString(sameOne));
